@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <title>Document</title>
+</head>
+<body>
+  <button id="myButton">Click me</button>
+  <p id="clickCount">You haven't clicked the button yet.</p>
+  <script>
+   let clickCount = 0;
+   let colors = ["red", "green", "blue"];
+   let colorIndex = 0;
+
+   document.getElementById('myButton').addEventListener('click', function() {
+      clickCount++;
+      document.getElementById('clickCount').innerText = `Button clicked ${clickCount} times.`;
+
+      colorIndex = colorIndex >= colors.length - 1 ? 0 : colorIndex + 1;
+      this.style.backgroundColor = colors[colorIndex];
+   });
+  </script>
+</body>
+</html>
